@@ -252,6 +252,7 @@ class MyJButton extends JFrame implements ActionListener{
             l1.setText(x1);
             lop.setText(op);
             l2.setText(x2);
+           
          }
          
          
