@@ -1,3 +1,3 @@
 Calculator using java swing
 
-![alt text](http://calculator1.png)
+![alt text](https://raw.githubusercontent.com/nootan123/Calculator/calculator1.png)
