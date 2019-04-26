@@ -5,7 +5,9 @@
  */
 package calculatorr;
 
+import java.awt.Color;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -36,11 +38,15 @@ class MyJButton extends JFrame implements ActionListener{
     JButton b43 = new JButton("!");
     JButton b44 = new JButton("/");
     JButton b51 = new JButton("=");
+    
+
+    static JLabel l1 = new JLabel("");
+    static JLabel lop = new JLabel("");
+    static JLabel l2 = new JLabel("");
+    static JLabel l3 = new JLabel("");
    
-    JLabel l1 = new JLabel("");
-    JLabel lop = new JLabel("");
-    JLabel l2 = new JLabel("");
-    JLabel l3 = new JLabel("");
+    
+
     
     MyJButton(){
     
@@ -118,59 +124,104 @@ class MyJButton extends JFrame implements ActionListener{
         c.add(b44);
         c.add(b51);
         
-        c.add(b41);
+        //c.add(b41);
         c.add(l1);
         c.add(lop);
         c.add(l2);
         c.add(l3);
     }
+    //f.setFont(f);
      String x1 = "";
      String x2 = "";
      String op = "";
      Boolean flag = false;
+     Boolean eq = true;
    public void actionPerformed(ActionEvent e){
+       if(e.getSource()== b11  && flag==false && eq == true){
+                    String ans = "";
+                    l3.setText(ans);
+                }
+       if(e.getSource()== b12 && flag==false && eq == true){
+                    String ans = "";
+                    l3.setText(ans);
+                }
+       if(e.getSource()== b13 && flag==false && eq == true){
+                    String ans = "";
+                    l3.setText(ans);
+                }
+       if(e.getSource()== b21 && flag==false && eq == true){
+                    String ans = "";
+                    l3.setText(ans);
+                }
+       if(e.getSource()== b22 && flag==false && eq == true){
+                    String ans = "";
+                    l3.setText(ans);
+                }
+       if(e.getSource()== b23 && flag==false && eq == true){
+                    String ans = "";
+                    l3.setText(ans);
+                }
+       if(e.getSource()== b31 && flag==false && eq == true){
+                    String ans = "";
+                    l3.setText(ans);
+                }
+       if(e.getSource()== b32 && flag==false && eq == true){
+                    String ans = "";
+                    l3.setText(ans);
+                }
+       if(e.getSource()== b33 && flag==false && eq == true){
+                    String ans = "";
+                    l3.setText(ans);
+                }
+       if(e.getSource()== b42 && flag==false && eq == true){
+                    String ans = "";
+                    l3.setText(ans);
+                }
+       
+       
        if(flag == false){
+                
       
-        if (e.getSource() == b11){
-            x1 = x1+"7";
-            l1.setText(x1);
-        }
-       if(e.getSource() == b12){
-            x1=x1+"8";
-            l1.setText(x1);
-        }
-       if(e.getSource() == b13){
-            x1=x1+"9";
-            l1.setText(x1);
-        }
-       if(e.getSource() == b21){
-            x1=x1+"4";
-            l1.setText(x1);
-        }
-        if(e.getSource() == b22){
-            x1=x1+"5";
-            l1.setText(x1);
-        }
-         if(e.getSource() == b23){
-            x1=x1+"6";
-            l1.setText(x1);
-        }
-          if(e.getSource() == b31){
-            x1=x1+"1";
-            l1.setText(x1);
-        }
-           if(e.getSource() == b32){
-            x1=x1+"2";
-            l1.setText(x1);
-        }
-            if(e.getSource() == b33){
-            x1=x1+"3";
-            l1.setText(x1);
-        }
-          if(e.getSource() == b42){
-            x1=x1+"0";
-            l1.setText(x1);
-        }
+                if (e.getSource() == b11){
+                    x1 = x1+"7";
+                    l1.setText(x1);
+                }
+               if(e.getSource() == b12){
+                    x1=x1+"8";
+                    l1.setText(x1);
+                }
+               if(e.getSource() == b13){
+                    x1=x1+"9";
+                    l1.setText(x1);
+                }
+               if(e.getSource() == b21){
+                    x1=x1+"4";
+                    l1.setText(x1);
+                }
+                if(e.getSource() == b22){
+                    x1=x1+"5";
+                    l1.setText(x1);
+                }
+                 if(e.getSource() == b23){
+                    x1=x1+"6";
+                    l1.setText(x1);
+                }
+                  if(e.getSource() == b31){
+                    x1=x1+"1";
+                    l1.setText(x1);
+                }
+                   if(e.getSource() == b32){
+                    x1=x1+"2";
+                    l1.setText(x1);
+                }
+                    if(e.getSource() == b33){
+                    x1=x1+"3";
+                    l1.setText(x1);
+                }
+                  if(e.getSource() == b42){
+                    x1=x1+"0";
+                    l1.setText(x1);
+                }
        }
        
        
@@ -202,11 +253,13 @@ class MyJButton extends JFrame implements ActionListener{
             op="";
             x1 = "";
             x2 = "";
+       
             l1.setText(x1);
             l2.setText(x2);
             lop.setText(op);
+            l3.setText("");
         } 
-         if(e.getSource()==b43){
+         if(e.getSource()==b43 && x1 != ""){
              flag = true;
              op ="!";
              lop.setText(op);
@@ -215,88 +268,90 @@ class MyJButton extends JFrame implements ActionListener{
          
          
          if(e.getSource() == b51){
-            if(op=="+"){
-                 int s = Integer.parseInt(x1)+Integer.parseInt(x2);
-                 String ans = Integer.toString(s);
-                 l3.setText(ans);
-            }
-            else if(op == "-"){
-                 int s = Integer.parseInt(x1)-Integer.parseInt(x2);
-                 String ans = Integer.toString(s);
-                 l3.setText(ans);
-            }
-             else if(op == "X"){
-                 int s = Integer.parseInt(x1)*Integer.parseInt(x2);
-                 String ans = Integer.toString(s);
-                 l3.setText(ans);
-            }
-             else if(op == "/"){
-                int s = Integer.parseInt(x1)/Integer.parseInt(x2);
-                 String ans = Integer.toString(s);
-                 l3.setText(ans);   
-             }
-             else if(op == "!"){
-                 int f=1;
-                 int s = Integer.parseInt(x1);
-                 for(int i =1;i<=s;i++)
-                     f=f*i;
-                 String ans = Integer.toString(f);
-                 l3.setText(ans);
-             }
-            
-            
-            flag = false;
-            x1="";
-            x2="";
-            op="";
-            l1.setText(x1);
-            lop.setText(op);
-            l2.setText(x2);
-           
+             
+                    if(op=="+"){
+                         int s = Integer.parseInt(x1)+Integer.parseInt(x2);
+                         String ans = Integer.toString(s);
+                         l3.setText(ans);
+                    }
+                    else if(op == "-"){
+                         int s = Integer.parseInt(x1)-Integer.parseInt(x2);
+                         String ans = Integer.toString(s);
+                         l3.setText(ans);
+                    }
+                     else if(op == "X"){
+                         int s = Integer.parseInt(x1)*Integer.parseInt(x2);
+                         String ans = Integer.toString(s);
+                         l3.setText(ans);
+                    }
+                     else if(op == "/"){
+                        int s = Integer.parseInt(x1)/Integer.parseInt(x2);
+                         String ans = Integer.toString(s);
+                         l3.setText(ans);   
+                     }
+                     else if(op == "!"){
+                         int f=1;
+                         int s = Integer.parseInt(x1);
+                         for(int i =1;i<=s;i++)
+                             f=f*i;
+                         String ans = Integer.toString(f);
+                         l3.setText(ans);
+                     }
+
+
+                    flag = false;
+                    eq = true;
+                    x1="";
+                    x2="";
+                    op="";
+                    l1.setText(x1);
+                    lop.setText(op);
+                    l2.setText(x2);
+
          }
          
          
         if(flag == true && x1 != ""){
-        if (e.getSource() == b11){
-            x2 = x2+"7";
-            l2.setText(x2);
-        }
-       if(e.getSource() == b12){
-            x2=x2+"8";
-            l2.setText(x2);
-        }
-       if(e.getSource() == b13){
-            x2=x2+"9";
-            l2.setText(x2);
-        }
-       if(e.getSource() == b21){
-            x2=x2+"4";
-            l2.setText(x2);
-        }
-        if(e.getSource() == b22){
-            x2=x2+"5";
-            l2.setText(x2);
-        }
-         if(e.getSource() == b23){
-            x2=x2+"6";
-            l2.setText(x2);
-        }
-          if(e.getSource() == b31){
-            x2=x2+"1";
-            l2.setText(x2);
-        }
-           if(e.getSource() == b32){
-            x2=x2+"2";
-            l2.setText(x2);
-        }
-            if(e.getSource() == b33){
-            x2=x2+"3";
-            l2.setText(x2);
-        }
-            if(e.getSource() == b42){
-            x2=x2+"0";
-            l2.setText(x2);
-        }
+                if (e.getSource() == b11){
+                    x2 = x2+"7";
+                    l2.setText(x2);
+                }
+               if(e.getSource() == b12){
+                    x2=x2+"8";
+                    l2.setText(x2);
+                }
+               if(e.getSource() == b13){
+                    x2=x2+"9";
+                    l2.setText(x2);
+                }
+               if(e.getSource() == b21){
+                    x2=x2+"4";
+                    l2.setText(x2);
+                }
+                if(e.getSource() == b22){
+                    x2=x2+"5";
+                    l2.setText(x2);
+                }
+                 if(e.getSource() == b23){
+                    x2=x2+"6";
+                    l2.setText(x2);
+                }
+                  if(e.getSource() == b31){
+                    x2=x2+"1";
+                    l2.setText(x2);
+                }
+                   if(e.getSource() == b32){
+                    x2=x2+"2";
+                    l2.setText(x2);
+                }
+                    if(e.getSource() == b33){
+                    x2=x2+"3";
+                    l2.setText(x2);
+                }
+                    if(e.getSource() == b42){
+                    x2=x2+"0";
+                    l2.setText(x2);
+                }
         }
          
 }
@@ -322,6 +377,13 @@ public class Calculatorr {
         jf.setTitle("Calculator");
         Container c = jf.getContentPane();
         c.setLayout(null);
+        c.setBackground(Color.LIGHT_GRAY);
+        Font f = new Font("Arial",Font.PLAIN,18);
+        Font f1 = new Font("Arial",Font.PLAIN,25);
+        MyJButton.l1.setFont(f);
+        MyJButton.l2.setFont(f);
+        MyJButton.lop.setFont(f);
+        MyJButton.l3.setFont(f1);
     }
     
 }
